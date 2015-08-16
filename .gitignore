@@ -24,3 +24,4 @@ src/elkwin.res
 test/.deps
 test/ElkulatorTest.exe
 test/elkulator-test
+third-party/
