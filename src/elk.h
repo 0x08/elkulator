@@ -2,7 +2,7 @@
 extern "C" {
 #endif
 
-#include <stdint.h>
+//#include <stdint.h>
 #include <allegro.h>
 #include <stdio.h>
 #include "path.h"

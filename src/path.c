@@ -4,7 +4,9 @@
  */
 
 #include <errno.h>
+#if !defined(_MSC_VER)
 #include <unistd.h>
+#endif
 #include <string.h>
 #ifdef WIN32
 #include <sys/stat.h>
