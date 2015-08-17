@@ -6,7 +6,9 @@
 #include <array>
 #include <cppunit/extensions/HelperMacros.h>
 #include <cstring>
+#if !defined(_MSC_VER)
 #include <unistd.h>
+#endif
 extern "C"
 {
     #include "path.h"
