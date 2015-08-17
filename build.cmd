@@ -26,6 +26,8 @@ set OPENALDIR=C:\src\elkulator\third-party\openal\1.16.0
 set OPENALINC=%OPENALDIR%\snapshot\include
 set FREEALUTDIR=C:\src\elkulator\third-party\freealut\fc814e3
 set FREEALUTINC=%FREEALUTDIR%\snapshot\include
+set CPPUNITDIR=C:\src\elkulator\third-party\cppunit\9c5b500
+set CPPUNITINC=%CPPUNITDIR%\snapshot\include
 
 cd %~dp0
 
@@ -57,6 +59,6 @@ goto :Foo
   ..
 :Foo
 
-set INCLUDE=%ALLEGROINC%;%ALLEGROINC2%;%ZLIBINC%;%OPENALINC%;%OPENALINC%\AL;%FREEALUTINC%;%INCLUDE%
+set INCLUDE=%ALLEGROINC%;%ALLEGROINC2%;%ZLIBINC%;%OPENALINC%;%OPENALINC%\AL;%FREEALUTINC%;%CPPUNITINC%;%INCLUDE%
 set UseEnv=true
 msbuild elkulator.sln
