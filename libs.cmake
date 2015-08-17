@@ -1,11 +1,13 @@
 set(THIRD_PARTY_LIBS
   alleg
   alut
-  m
   openal
   z
   ${CPPUNIT_LIBRARIES}
 )
+if(NOT MSVC)
+  list(APPEND THIRD_PARTY_LIBS m)
+endif()
 
 if(DEFINED ELKULATOR_LINK_X11)
   set(PLATFORM_THIRD_PARTY_LIBS

@@ -4,7 +4,7 @@
 int debug=0,debugon=0;
 int debug;
 int indebug=0;
-extern int fcount;
+/*extern*/ int fcount;
 
 #ifdef WIN32
 #include <allegro.h>

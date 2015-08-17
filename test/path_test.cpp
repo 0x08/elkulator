@@ -6,7 +6,9 @@
 #include <array>
 #include <cppunit/extensions/HelperMacros.h>
 #include <cstring>
-#if !defined(_MSC_VER)
+#if defined(_MSC_VER)
+#include <direct.h>
+#else
 #include <unistd.h>
 #endif
 extern "C"

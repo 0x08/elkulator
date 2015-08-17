@@ -12,7 +12,7 @@ set(OBJ_SOURCE_FILES
   ${SOURCE_DIR}/debugger.c
   ${SOURCE_DIR}/disc.c
   ${SOURCE_DIR}/elk.h
-  ${SOURCE_DIR}/elkwin.rc
+  #${SOURCE_DIR}/elkwin.rc
   ${SOURCE_DIR}/fdi.c
   ${SOURCE_DIR}/fdi2raw.c
   ${SOURCE_DIR}/fdi2raw.h

@@ -1,5 +1,4 @@
 include(CheckCXXCompilerFlag)
-include(CheckCXXSourceCompiles)
 include(CheckLibraryExists)
 
 # Detect C++11 support and warn if (possibly) absent
@@ -12,10 +11,6 @@ elseif(COMPILER_SUPPORTS_CXX0X)
 else()
   message(FATAL_ERROR "Failed to detect C++11 mode for compiler ${CMAKE_CXX_COMPILER}")
 endif()
-
-# Determine if std::make_unique is supported
-set(CMAKE_REQUIRED_FLAGS ${CMAKE_CXX_FLAGS})
-check_cxx_source_compiles("#include <memory>\nclass C { };\nint main() { std::make_unique<C>(); }" HAVE_MAKE_UNIQUE)
 
 # Detect Allegro
 if(NOT DEFINED ELKULATOR_LINK_X11)

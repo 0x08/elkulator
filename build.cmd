@@ -28,6 +28,7 @@ set FREEALUTDIR=C:\src\elkulator\third-party\freealut\fc814e3
 set FREEALUTINC=%FREEALUTDIR%\snapshot\include
 set CPPUNITDIR=C:\src\elkulator\third-party\cppunit\9c5b500
 set CPPUNITINC=%CPPUNITDIR%\snapshot\include
+set CPPUNITLIB=%CPPUNITDIR%\snapshot\lib
 
 cd %~dp0
 
@@ -37,7 +38,6 @@ rem )
 rem md build
 cd build
 
-goto :Foo
 %CMAKE% ^
   -G "Visual Studio 14 2015" ^
   -DDDRAW_INCLUDE_DIR=%DIRECTXINC% ^
@@ -56,9 +56,11 @@ goto :Foo
   -DVORBIS_INCLUDE_DIR=%VORBISINC% ^
   -DVORBIS_LIBRARY=%VORBISLIB%\libvorbis_static.lib ^
   -DVORBISFILE_LIBRARY=%VORBISLIB%\libvorbisfile_static.lib ^
+  -DCPPUNIT_INCLUDE_DIRS=%CPPUNITINC% ^
+  -DCPPUNIT_LIBRARIES=%CPPUNITLIB%\cppunitd.lib ^
   ..
-:Foo
 
-set INCLUDE=%ALLEGROINC%;%ALLEGROINC2%;%ZLIBINC%;%OPENALINC%;%OPENALINC%\AL;%FREEALUTINC%;%CPPUNITINC%;%INCLUDE%
+set INCLUDE=%ALLEGROINC%;%ALLEGROINC2%;%ZLIBINC%;%OPENALINC%;%OPENALINC%\AL;%FREEALUTINC%;%INCLUDE%
+set LIB=C:\src\elkulator\third-party\allegro\4.4.2\build\lib\RelWithDebInfo;C:\src\elkulator\third-party\freealut\fc814e3\build\src\Debug;C:\src\elkulator\third-party\openal\1.16.0\build\Debug;C:\src\elkulator\third-party\zlib\1.2.8\build\Debug;%LIB%
 set UseEnv=true
 msbuild elkulator.sln
