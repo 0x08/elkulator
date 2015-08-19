@@ -34,6 +34,7 @@ include(${PROJECT_SOURCE_DIR}/sources.cmake)
 include(${PROJECT_SOURCE_DIR}/libs.cmake)
 
 include_directories(
+  ${BASE_INCLUDE_DIRS}
   ${PROJECT_BINARY_DIR}
   ${SOURCE_DIR}
   ${CPPUNIT_INCLUDE_DIRS}
@@ -54,8 +55,9 @@ add_executable(elkulator WIN32
   ${BIN_SOURCE_FILES}
 )
 target_link_libraries(elkulator
-  ${THIRD_PARTY_LIBS}
-  ${PLATFORM_THIRD_PARTY_LIBS}
+  ${BASE_LIBS}
+  #${THIRD_PARTY_LIBS}
+  #${PLATFORM_THIRD_PARTY_LIBS}
 )
 
 add_executable(elkulator-test
@@ -64,8 +66,9 @@ add_executable(elkulator-test
   ${TEST_BIN_SOURCE_FILES}
 )
 target_link_libraries(elkulator-test
-  ${THIRD_PARTY_LIBS}
-  ${PLATFORM_THIRD_PARTY_LIBS}
+  ${BASE_LIBS}
+  #${THIRD_PARTY_LIBS}
+  #${PLATFORM_THIRD_PARTY_LIBS}
 )
 
 add_test(NAME elkulator-test COMMAND elkulator-test)

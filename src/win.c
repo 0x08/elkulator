@@ -318,7 +318,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
            return -1;
         allegro_init();
         getwindowsstuff();
-        initelk();
+        initelk(0, NULL);
         initmenu();
         if (videoresize) SetWindowLong(ghwnd, GWL_STYLE, WS_OVERLAPPEDWINDOW|WS_VISIBLE);
         else             SetWindowLong(ghwnd, GWL_STYLE, (WS_OVERLAPPEDWINDOW&~WS_SIZEBOX&~WS_THICKFRAME&~WS_MAXIMIZEBOX)|WS_VISIBLE);
